@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vakitçe — Gizlilik Politikası</title>
+<style>
+  :root {
+    --navy: #0C2233;
+    --navy-light: #123049;
+    --gold: #E8CD96;
+    --text: #F3E9D2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--gold);
+    margin: 0 0 0.25rem;
+  }
+  header a {
+    color: var(--gold);
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 4rem;
+  }
+  .card {
+    background: var(--navy-light);
+    border: 1px solid rgba(232,205,150,0.25);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+  }
+  h2 {
+    color: var(--gold);
+    font-size: 1.05rem;
+    margin-top: 1.75rem;
+  }
+  h2:first-child { margin-top: 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: 0.6rem; }
+  a { color: var(--gold); }
+  .note {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(232,205,150,0.2);
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gizlilik Politikası</h1>
+  <a href="index.html">&larr; Vakitçe ana sayfa</a>
+</header>
+<main>
+  <div class="card">
+    <p>Vakitçe mümkün olan en az veriyi işler. Vakitçe'nin kendi sunucusu veya veritabanı yoktur; uygulama yalnızca kullanıcının kendi cihazı ile kullanıcının doğrudan bağlandığı üçüncü taraf servisler (Diyanet İşleri Başkanlığı, Al Quran Cloud) arasında aracılık eder.</p>
+
+    <h2>Toplanmayan veriler</h2>
+    <p>Vakitçe reklam kimliği kullanmaz, kullanıcı davranışını izlemez, üçüncü taraf analitik/reklam SDK'sı içermez ve kendi sunucusuna hiçbir veri göndermez.</p>
+
+    <h2>Cihazda tutulan veriler</h2>
+    <p>Seçilen il/ilçe, bildirim tercihleri, zikir/tesbih sayaçları, hatim ilerlemesi ve Sade Kullanım/tema tercihleri yalnızca cihazda saklanır, hiçbir yere gönderilmez.</p>
+
+    <h2>Kullanıcının kendi isteğiyle üçüncü taraflara giden veriler</h2>
+    <ul>
+      <li>Diyanet Awqat Salah hesabı (e-posta/şifre), kullanıcı kendi hesap bilgilerini girdiğinde cihazda şifreli olarak saklanır (Android Keystore) ve yalnızca Diyanet'in kendi giriş uç noktasına gönderilir — namaz vakti ve günün ayeti/hadisi/duası bu şekilde çekilir. Kur'an metni/meali Diyanet'e bağlı değildir: uygulamaya statik/offline olarak gömülüdür (Elmalılı Hamdi Yazır meali + Arapça metin), hiçbir hesap/anahtar gerekmez ve okuma sırasında ağa hiç gidilmez.</li>
+      <li>Arapça tilavet sesi, Al Quran Cloud'un açık CDN'inden (kimlik/hesap gerekmeden) akış olarak çalınır; yalnızca istenen ayetin numarası isteğe eklenir, kişisel veri gitmez.</li>
+      <li>Kullanıcı Ayarlar'da "Konumumu Otomatik Algıla"ya basarsa yaklaşık konum bir kez okunup il/ilçeye çevrilir, koordinat hiçbir yerde saklanmaz; bu özellik isteğe bağlıdır, elle il/ilçe seçimi her zaman kullanılabilir.</li>
+      <li>Kullanıcı "Cami Bulucu"yu açarsa, aynı yaklaşık konum yalnızca o an OpenStreetMap'in ücretsiz Overpass API'sine bir sorgu olarak gider (yakındaki camileri listelemek için); hiçbir kimlik/hesap bilgisi eklenmez, konum Vakitçe tarafından saklanmaz.</li>
+      <li>Kullanıcı "Bize Ulaşın" formunu doldurup gönderirse (ad soyad, e-posta, telefon, mesaj), bu bilgiler geliştiricinin kendi Google hesabı altında çalışan bir Apps Script Web App üzerinden geliştiricinin Gmail'ine iletilir — üçüncü bir şirkete gitmez, Vakitçe'nin kendi sunucusunda saklanmaz.</li>
+      <li>Kullanıcı bir abonelik/bağış satın alırsa, işlem Google Play'in kendi satın alma altyapısı (Play Billing) üzerinden yürütülür; ödeme bilgileri Google tarafından işlenir, Vakitçe'nin kendisi kart/ödeme bilgisi görmez veya saklamaz.</li>
+      <li>Kullanıcı Cüz Dağıtım Listesi'ni "Paylaş" ile gönderirse, metin işletim sisteminin kendi paylaşım menüsü üzerinden kullanıcının seçtiği uygulamaya iletilir — Vakitçe bu paylaşımı görmez veya saklamaz.</li>
+      <li>Kullanıcı (premium) "Yedekle / Geri Yükle"de "Yedek Oluştur"a basarsa, hatim/cüz dağıtım/zikir/tercih verisi bir JSON dosyasına yazılıp işletim sisteminin paylaşım sayfası üzerinden kullanıcının seçtiği hedefe (Drive, Dosyalar, e-posta vb.) gönderilir — Vakitçe'nin sunucusu yok, dosyayı görmez/saklamaz. Diyanet hesap bilgileri bu dosyaya hiç dahil edilmez.</li>
+    </ul>
+
+    <h2>Verilerinizi silme</h2>
+    <p>Cihazınıza kaydedilen tüm verileri (hesap bilgileri dahil) işletim sisteminin "Uygulama verilerini temizle" ayarından veya Ayarlar ekranındaki ilgili "çıkış yap"/"anahtarı sil" seçenekleriyle silebilirsiniz.</p>
+
+    <h2>İletişim</h2>
+    <p>Sorularınız için: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a></p>
+
+    <p class="note">Son güncelleme: Ağustos 2026.</p>
+  </div>
+</main>
+<footer>
+  &copy; 2026 Vakitçe
+</footer>
+</body>
+</html>
