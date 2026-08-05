@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vakitçe</title>
+<style>
+  :root {
+    --navy: #0C2233;
+    --navy-light: #123049;
+    --gold: #E8CD96;
+    --text: #F3E9D2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    padding: 4rem 1.5rem 2rem;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin: 0 0 0.5rem;
+  }
+  .tagline {
+    font-style: italic;
+    color: var(--text);
+    opacity: 0.85;
+    margin: 0;
+  }
+  main {
+    flex: 1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    text-align: center;
+  }
+  .card {
+    background: var(--navy-light);
+    border: 1px solid rgba(232,205,150,0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  .card h2 {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
+  ul { padding-left: 1.2rem; }
+  a { color: var(--gold); }
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vakitçe</h1>
+  <p class="tagline">Her vakit, huzura bir çağrı.</p>
+</header>
+<main>
+  <div class="card">
+    <h2>Uygulama hakkında</h2>
+    <p>Vakitçe; namaz vakitleri, Kur'an okuma (Elmalılı Hamdi Yazır meali, tamamen çevrimdışı), hatim takibi, zikir/tesbih sayacı, kıble yönü ve yakın cami bulma gibi özellikleri tek bir uygulamada bir araya getirir.</p>
+    <ul>
+      <li>Namaz vakti bildirimleri</li>
+      <li>Offline Kur'an okuma ve hatim takibi</li>
+      <li>Zikir/tesbih sayaçları</li>
+      <li>Kıble pusulası</li>
+      <li>Yakın cami bulucu</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>İletişim</h2>
+    <p>Sorularınız, geri bildirimleriniz için: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a></p>
+  </div>
+  <div class="card">
+    <h2>Gizlilik</h2>
+    <p>Vakitçe'nin veri toplama ve kullanma şeklini <a href="privacy.html">Gizlilik Politikası</a> sayfasında okuyabilirsiniz.</p>
+  </div>
+</main>
+<footer>
+  &copy; 2026 Vakitçe
+</footer>
+</body>
+</html>
