@@ -75,33 +75,36 @@
 </header>
 <main>
   <div class="card">
-    <p>Vakitçe mümkün olan en az veriyi işler. Vakitçe'nin kendi sunucusu veya veritabanı yoktur; uygulama yalnızca kullanıcının kendi cihazı ile kullanıcının doğrudan bağlandığı üçüncü taraf servisler (Diyanet İşleri Başkanlığı, Al Quran Cloud) arasında aracılık eder.</p>
+    <p>Vakitçe mümkün olan en az veriyi işler. Vakitçe'nin kullanıcıya ait herhangi bir veri tuttuğu bir veritabanı yoktur. 14 Ağustos 2026'dan itibaren namaz vakti ve "Günün Duası" verisi, Vakitçe'nin kendi hafif sunucu-taraflı bileşeni (Firebase Cloud Function) üzerinden Diyanet'e iletilir — bu bileşen yalnızca geliştiricinin kendi tek bir Diyanet hesabını (şifreli olarak saklanan) kullanır ve kullanıcıya özgü hiçbir kişisel veri (ad/e-posta/şifre/kimlik) almaz, işlemez veya saklamaz; yalnızca konum/tarih gibi anonim parametreleri geçirir.</p>
 
     <h2>Toplanmayan veriler</h2>
-    <p>Vakitçe reklam kimliği kullanmaz, kullanıcı davranışını izlemez, üçüncü taraf analitik/reklam SDK'sı içermez ve kendi sunucusuna hiçbir veri göndermez.</p>
+    <p>Vakitçe reklam kimliği kullanmaz, kullanıcı davranışını izlemez/profillemez, üçüncü taraf analitik/reklam SDK'sı içermez ve kendi sunucusuna hiçbir veri göndermez.</p>
+
+    <h2>Çökme raporlama</h2>
+    <p>Uygulama, hataları/çökmeleri tespit edip düzeltebilmek için Google'ın Firebase Crashlytics servisini kullanır. Bir çökme olduğunda yalnızca teknik teşhis verisi (hatanın oluştuğu kod satırı/yığın izi, cihaz modeli, Android sürümü, uygulama sürümü) Google'a gönderilir; ad, e-posta, konum gibi kişisel bir bilgi bilerek hiç eklenmez ve kullanıcı kimliği hiçbir şekilde işaretlenmez. Bu, kullanıcı takibi/reklam amaçlı bir analitik değildir — yalnızca uygulamanın daha kararlı çalışmasını sağlamak içindir.</p>
 
     <h2>Cihazda tutulan veriler</h2>
     <p>Seçilen il/ilçe, bildirim tercihleri, zikir/tesbih sayaçları, hatim ilerlemesi ve Sade Kullanım/tema tercihleri yalnızca cihazda saklanır, hiçbir yere gönderilmez.</p>
 
     <h2>Kullanıcının kendi isteğiyle üçüncü taraflara giden veriler</h2>
     <ul>
-      <li>Diyanet Awqat Salah hesabı (e-posta/şifre), kullanıcı kendi hesap bilgilerini girdiğinde cihazda şifreli olarak saklanır (Android Keystore) ve yalnızca Diyanet'in kendi giriş uç noktasına gönderilir — namaz vakti ve günün ayeti/hadisi/duası bu şekilde çekilir. Kur'an metni/meali Diyanet'e bağlı değildir: uygulamaya statik/offline olarak gömülüdür (Elmalılı Hamdi Yazır meali + Arapça metin), hiçbir hesap/anahtar gerekmez ve okuma sırasında ağa hiç gidilmez.</li>
+      <li>Namaz vakti ve günün ayeti/hadisi/duası, Vakitçe'nin kendi sunucu-taraflı bileşeni (yukarıya bakınız) üzerinden Diyanet'ten çekilir — kullanıcıdan hiçbir hesap bilgisi (e-posta/şifre) istenmez veya cihazda saklanmaz; bu özellik hesapsız, doğrudan çalışır. Kur'an metni/meali Diyanet'e bağlı değildir: uygulamaya statik/offline olarak gömülüdür (Elmalılı Hamdi Yazır meali + Arapça metin), hiçbir hesap/anahtar gerekmez ve okuma sırasında ağa hiç gidilmez.</li>
       <li>Arapça tilavet sesi, Al Quran Cloud'un açık CDN'inden (kimlik/hesap gerekmeden) akış olarak çalınır; yalnızca istenen ayetin numarası isteğe eklenir, kişisel veri gitmez.</li>
       <li>Kullanıcı Ayarlar'da "Konumumu Otomatik Algıla"ya basarsa yaklaşık konum bir kez okunup il/ilçeye çevrilir, koordinat hiçbir yerde saklanmaz; bu özellik isteğe bağlıdır, elle il/ilçe seçimi her zaman kullanılabilir.</li>
       <li>Kullanıcı "Cami Bulucu"yu açarsa, aynı yaklaşık konum yalnızca o an OpenStreetMap'in ücretsiz Overpass API'sine bir sorgu olarak gider (yakındaki camileri listelemek için); hiçbir kimlik/hesap bilgisi eklenmez, konum Vakitçe tarafından saklanmaz.</li>
       <li>Kullanıcı "Bize Ulaşın" formunu doldurup gönderirse (ad soyad, e-posta, telefon, mesaj), bu bilgiler geliştiricinin kendi Google hesabı altında çalışan bir Apps Script Web App üzerinden geliştiricinin Gmail'ine iletilir — üçüncü bir şirkete gitmez, Vakitçe'nin kendi sunucusunda saklanmaz.</li>
       <li>Kullanıcı bir abonelik/bağış satın alırsa, işlem Google Play'in kendi satın alma altyapısı (Play Billing) üzerinden yürütülür; ödeme bilgileri Google tarafından işlenir, Vakitçe'nin kendisi kart/ödeme bilgisi görmez veya saklamaz.</li>
       <li>Kullanıcı Cüz Dağıtım Listesi'ni "Paylaş" ile gönderirse, metin işletim sisteminin kendi paylaşım menüsü üzerinden kullanıcının seçtiği uygulamaya iletilir — Vakitçe bu paylaşımı görmez veya saklamaz.</li>
-      <li>Kullanıcı (premium) "Yedekle / Geri Yükle"de "Yedek Oluştur"a basarsa, hatim/cüz dağıtım/zikir/tercih verisi bir JSON dosyasına yazılıp işletim sisteminin paylaşım sayfası üzerinden kullanıcının seçtiği hedefe (Drive, Dosyalar, e-posta vb.) gönderilir — Vakitçe'nin sunucusu yok, dosyayı görmez/saklamaz. Diyanet hesap bilgileri bu dosyaya hiç dahil edilmez.</li>
+      <li>Kullanıcı (premium) "Yedekle / Geri Yükle"de "Yedek Oluştur"a basarsa, hatim/cüz dağıtım/zikir/tercih verisi bir JSON dosyasına yazılıp işletim sisteminin paylaşım sayfası üzerinden kullanıcının seçtiği hedefe (Drive, Dosyalar, e-posta vb.) gönderilir — Vakitçe'nin sunucusu yok, dosyayı görmez/saklamaz.</li>
     </ul>
 
     <h2>Verilerinizi silme</h2>
-    <p>Cihazınıza kaydedilen tüm verileri (hesap bilgileri dahil) işletim sisteminin "Uygulama verilerini temizle" ayarından veya Ayarlar ekranındaki ilgili "çıkış yap"/"anahtarı sil" seçenekleriyle silebilirsiniz.</p>
+    <p>Cihazınıza kaydedilen tüm verileri işletim sisteminin "Uygulama verilerini temizle" ayarından silebilirsiniz.</p>
 
     <h2>İletişim</h2>
     <p>Sorularınız için: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a></p>
 
-    <p class="note">Son güncelleme: Ağustos 2026.</p>
+    <p class="note">Son güncelleme: 23 Ağustos 2026.</p>
   </div>
 </main>
 <footer>
