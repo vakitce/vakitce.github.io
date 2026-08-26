@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vakitçe — Gizlilik Politikası</title>
+<title>Vakitçe — Gizlilik Politikası ve KVKK Aydınlatma Metni</title>
 <style>
   :root {
     --navy: #0C2233;
@@ -27,6 +27,7 @@
     font-family: Georgia, "Times New Roman", serif;
     color: var(--gold);
     margin: 0 0 0.25rem;
+    font-size: 1.6rem;
   }
   header a {
     color: var(--gold);
@@ -70,15 +71,23 @@
 </head>
 <body>
 <header>
-  <h1>Gizlilik Politikası</h1>
+  <h1>Gizlilik Politikası ve KVKK Aydınlatma Metni</h1>
   <a href="index.html">&larr; Vakitçe ana sayfa</a>
 </header>
 <main>
   <div class="card">
-    <p>Vakitçe mümkün olan en az veriyi işler. Vakitçe'nin kullanıcıya ait herhangi bir veri tuttuğu bir veritabanı yoktur. 14 Ağustos 2026'dan itibaren namaz vakti ve "Günün Duası" verisi, Vakitçe'nin kendi hafif sunucu-taraflı bileşeni (Firebase Cloud Function) üzerinden Diyanet'e iletilir — bu bileşen yalnızca geliştiricinin kendi tek bir Diyanet hesabını (şifreli olarak saklanan) kullanır ve kullanıcıya özgü hiçbir kişisel veri (ad/e-posta/şifre/kimlik) almaz, işlemez veya saklamaz; yalnızca konum/tarih gibi anonim parametreleri geçirir.</p>
+    <p><strong>Veri Sorumlusu:</strong> Bu uygulamanın geliştiricisi (Ahmet Köseoğlu), 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusudur. İletişim: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a>.</p>
+
+    <p>Vakitçe mümkün olan en az veriyi işler. Vakitçe'nin kullanıcıya ait herhangi bir veri tuttuğu bir veritabanı yoktur. Namaz vakti ve "Günün Duası" verisi, Vakitçe'nin kendi hafif sunucu-taraflı bileşeni (Firebase Cloud Function) üzerinden Diyanet'e iletilir — bu bileşen yalnızca geliştiricinin kendi tek bir Diyanet hesabını (şifreli olarak saklanan) kullanır ve kullanıcıya özgü hiçbir kişisel veri (ad/e-posta/şifre/kimlik) almaz, işlemez veya saklamaz; yalnızca konum/tarih gibi anonim parametreleri geçirir.</p>
 
     <h2>Toplanmayan veriler</h2>
-    <p>Vakitçe reklam kimliği kullanmaz, kullanıcı davranışını izlemez/profillemez, üçüncü taraf analitik/reklam SDK'sı içermez ve kendi sunucusuna hiçbir veri göndermez.</p>
+    <p>Vakitçe kullanıcı hesabı istemez, kullanıcı davranışını izlemez/profillemez ve kendi sunucusuna hiçbir veri göndermez.</p>
+
+    <h2>Reklam</h2>
+    <p>Ana ekranda Google AdMob üzerinden tek ve küçük bir banner reklam gösterilir — reklam hedeflemesi için cihazın reklam kimliği (advertising ID) Google'a iletilir. AB/EEA/Birleşik Krallık kullanıcılarına, yasal zorunluluk gereği, reklam öncesi bir izin formu (Google Kullanıcı Mesajlaşma Platformu) gösterilir. Geçiş/tam ekran reklam kullanılmaz. Bağış/abonelikle destekleyen kullanıcılarda reklam hiç gösterilmez/istenmez.</p>
+
+    <h2>Bildirim istatistiği</h2>
+    <p>Bir duyuru bildirimi açıldığında/görüldüğünde, geliştiricinin kaç kişiye ulaştığını görebilmesi için yalnızca o duyurunun toplu sayacı bir artırılır — cihaz kimliği, IP veya kişisel bir bilgi hiç gönderilmez/saklanmaz, hangi cihazın gördüğü ayırt edilemez.</p>
 
     <h2>Çökme raporlama</h2>
     <p>Uygulama, hataları/çökmeleri tespit edip düzeltebilmek için Google'ın Firebase Crashlytics servisini kullanır. Bir çökme olduğunda yalnızca teknik teşhis verisi (hatanın oluştuğu kod satırı/yığın izi, cihaz modeli, Android sürümü, uygulama sürümü) Google'a gönderilir; ad, e-posta, konum gibi kişisel bir bilgi bilerek hiç eklenmez ve kullanıcı kimliği hiçbir şekilde işaretlenmez. Bu, kullanıcı takibi/reklam amaçlı bir analitik değildir — yalnızca uygulamanın daha kararlı çalışmasını sağlamak içindir.</p>
@@ -91,20 +100,29 @@
       <li>Namaz vakti ve günün ayeti/hadisi/duası, Vakitçe'nin kendi sunucu-taraflı bileşeni (yukarıya bakınız) üzerinden Diyanet'ten çekilir — kullanıcıdan hiçbir hesap bilgisi (e-posta/şifre) istenmez veya cihazda saklanmaz; bu özellik hesapsız, doğrudan çalışır. Kur'an metni/meali Diyanet'e bağlı değildir: uygulamaya statik/offline olarak gömülüdür (Elmalılı Hamdi Yazır meali + Arapça metin), hiçbir hesap/anahtar gerekmez ve okuma sırasında ağa hiç gidilmez.</li>
       <li>Arapça tilavet sesi, Al Quran Cloud'un açık CDN'inden (kimlik/hesap gerekmeden) akış olarak çalınır; yalnızca istenen ayetin numarası isteğe eklenir, kişisel veri gitmez.</li>
       <li>Kullanıcı Ayarlar'da "Konumumu Otomatik Algıla"ya basarsa yaklaşık konum bir kez okunup il/ilçeye çevrilir, koordinat hiçbir yerde saklanmaz; bu özellik isteğe bağlıdır, elle il/ilçe seçimi her zaman kullanılabilir.</li>
-      <li>Kullanıcı "Cami Bulucu"yu açarsa, aynı yaklaşık konum yalnızca o an OpenStreetMap'in ücretsiz Overpass API'sine bir sorgu olarak gider (yakındaki camileri listelemek için); hiçbir kimlik/hesap bilgisi eklenmez, konum Vakitçe tarafından saklanmaz.</li>
+      <li>Kullanıcı "Cami Bulucu"yu açarsa, aynı yaklaşık konum yalnızca o an OpenStreetMap'in ücretsiz Overpass API'sine (yurt dışı sunucular) bir sorgu olarak gider (yakındaki camileri listelemek için); hiçbir kimlik/hesap bilgisi eklenmez, konum Vakitçe tarafından saklanmaz.</li>
       <li>Kullanıcı "Bize Ulaşın" formunu doldurup gönderirse (ad soyad, e-posta, telefon, mesaj), bu bilgiler geliştiricinin kendi Google hesabı altında çalışan bir Apps Script Web App üzerinden geliştiricinin Gmail'ine iletilir — üçüncü bir şirkete gitmez, Vakitçe'nin kendi sunucusunda saklanmaz.</li>
       <li>Kullanıcı bir abonelik/bağış satın alırsa, işlem Google Play'in kendi satın alma altyapısı (Play Billing) üzerinden yürütülür; ödeme bilgileri Google tarafından işlenir, Vakitçe'nin kendisi kart/ödeme bilgisi görmez veya saklamaz.</li>
       <li>Kullanıcı Cüz Dağıtım Listesi'ni "Paylaş" ile gönderirse, metin işletim sisteminin kendi paylaşım menüsü üzerinden kullanıcının seçtiği uygulamaya iletilir — Vakitçe bu paylaşımı görmez veya saklamaz.</li>
       <li>Kullanıcı (premium) "Yedekle / Geri Yükle"de "Yedek Oluştur"a basarsa, hatim/cüz dağıtım/zikir/tercih verisi bir JSON dosyasına yazılıp işletim sisteminin paylaşım sayfası üzerinden kullanıcının seçtiği hedefe (Drive, Dosyalar, e-posta vb.) gönderilir — Vakitçe'nin sunucusu yok, dosyayı görmez/saklamaz.</li>
     </ul>
 
-    <h2>Verilerinizi silme</h2>
-    <p>Cihazınıza kaydedilen tüm verileri işletim sisteminin "Uygulama verilerini temizle" ayarından silebilirsiniz.</p>
+    <h2>KVKK — İşleme amaçları ve hukuki sebepler</h2>
+    <p>Veriler; namaz vakti/dinî içerik sunumu, uygulamanın teknik olarak çalışır tutulması ve hataların giderilmesi, kullanıcı talebiyle iletişim, reklam gösterimi ve satın alma işlemlerinin yürütülmesi amaçlarıyla işlenir. Çökme raporlama ve uygulamanın teknik işleyişi "meşru menfaat"e, satın alma/abonelik işlemleri "sözleşmenin kurulması/ifası"na dayanır; konum paylaşımı ve iletişim formu gibi işlemler yalnızca kullanıcının kendi açık eylemiyle başlar. AB/EEA/Birleşik Krallık kullanıcılarında reklam kişiselleştirmesi öncesi ayrıca açık rıza (UMP formu) alınır; bunun dışında, işlenen verinin niteliği gereği ayrı bir açık rıza metni/ekranı bulunmamaktadır.</p>
+
+    <h2>Yurt dışına aktarım</h2>
+    <p>Google (Firebase Crashlytics/Messaging, AdMob — ABD merkezli) ve OpenStreetMap (Cami Bulucu sorguları — AB merkezli) gibi hizmet sağlayıcılar nedeniyle bazı teknik veriler yurt dışındaki sunuculara ulaşabilir. Bu sağlayıcılar kendi uluslararası veri işleme sözleşmeleri kapsamında hizmet verir; Vakitçe'nin kendi sunucusu yurt dışına kullanıcıya özel bir veri aktarmaz.</p>
+
+    <h2>İlgili kişi hakları (KVKK m.11) ve başvuru yöntemi</h2>
+    <p>Kullanıcılar; verilerinin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacını öğrenme, yurt içi/dışı aktarıldığı tarafları bilme, eksik/yanlış işlenmişse düzeltilmesini isteme, kanunda öngörülen şartlarda silinmesini/yok edilmesini isteme, bu işlemlerin aktarılan taraflara bildirilmesini isteme, otomatik işleme sonucu aleyhine bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğraması hâlinde giderim talep etme haklarına sahiptir. Bu haklar kapsamındaki talepler <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a> adresine e-posta ile iletilebilir; en geç 30 gün içinde yanıtlanır.</p>
+
+    <h2>Saklama süreleri ve verilerinizi silme</h2>
+    <p>Cihazda tutulan veriler, uygulamayı kaldırana veya işletim sisteminin "Uygulama verilerini temizle" ayarını kullanana kadar saklanır. Crashlytics çökme raporları Google'ın kendi varsayılan saklama süresi boyunca Google sunucularında tutulur. Bildirim istatistiği sayaçları kişisel veri içermediğinden süresiz tutulabilir. Vakitçe'nin kendi sunucusunda hiçbir kullanıcıya özel veri saklanmaz.</p>
 
     <h2>İletişim</h2>
-    <p>Sorularınız için: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a></p>
+    <p>Sorularınız için: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a>. Kullanım Koşulları'nı <a href="terms.html">buradan</a> okuyabilirsiniz.</p>
 
-    <p class="note">Son güncelleme: 23 Ağustos 2026.</p>
+    <p class="note">Son güncelleme: 27 Ağustos 2026.</p>
   </div>
 </main>
 <footer>
