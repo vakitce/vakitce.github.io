@@ -81,10 +81,13 @@
     <p>Vakitçe mümkün olan en az veriyi işler. Vakitçe'nin kullanıcıya ait herhangi bir veri tuttuğu bir veritabanı yoktur. Namaz vakti ve "Günün Duası" verisi, Vakitçe'nin kendi hafif sunucu-taraflı bileşeni (Firebase Cloud Function) üzerinden Diyanet'e iletilir — bu bileşen yalnızca geliştiricinin kendi tek bir Diyanet hesabını (şifreli olarak saklanan) kullanır ve kullanıcıya özgü hiçbir kişisel veri (ad/e-posta/şifre/kimlik) almaz, işlemez veya saklamaz; yalnızca konum/tarih gibi anonim parametreleri geçirir.</p>
 
     <h2>Toplanmayan veriler</h2>
-    <p>Vakitçe kullanıcı hesabı istemez, kullanıcı davranışını izlemez/profillemez ve kendi sunucusuna hiçbir veri göndermez.</p>
+    <p>Vakitçe kullanıcı hesabı istemez ve kendi sunucusuna kullanıcıya özgü hiçbir kişisel veri göndermez. Reklam ölçümü amaçlı istisna aşağıda ayrıca açıklanmıştır.</p>
 
     <h2>Reklam</h2>
     <p>Ana ekranda Google AdMob üzerinden tek ve küçük bir banner reklam gösterilir — reklam hedeflemesi için cihazın reklam kimliği (advertising ID) Google'a iletilir. AB/EEA/Birleşik Krallık kullanıcılarına, yasal zorunluluk gereği, reklam öncesi bir izin formu (Google Kullanıcı Mesajlaşma Platformu) gösterilir. Geçiş/tam ekran reklam kullanılmaz. Bağış/abonelikle destekleyen kullanıcılarda reklam hiç gösterilmez/istenmez.</p>
+
+    <h2>Reklam ölçümü (Google Analytics for Firebase)</h2>
+    <p><strong>6 Eylül 2026'dan itibaren:</strong> Vakitçe'yi tanıtmak için küçük ölçekli bir Google Ads kampanyası yürütülüyor. Hangi reklamın gerçekten bir aboneliğe dönüştüğünü ölçebilmek için uygulamaya Google Analytics for Firebase (GA4) eklendi. Bu bileşen; abonelik ekranının görüntülenmesi, satın alma işleminin başlatılması ve tamamlanması gibi birkaç olayı (varsa satın alınan planın fiyatı/para birimiyle birlikte) cihaz/uygulama örneği düzeyinde Google'a iletir. Ad, e-posta, telefon gibi bir kimlik bilgisi bu ölçüme hiçbir zaman eklenmez; amaç yalnızca reklam bütçesinin hangi kanala gittiğini görebilmektir, kişiye özel bir profil oluşturulmaz. Bu, Vakitçe'nin "kullanıcı hesabı istemez" ilkesini değiştirmez; reklam bütçesinin sorumlu yönetimi için bilinçli olarak eklenmiş, amacı sınırlı bir ölçüm bileşenidir.</p>
 
     <h2>Bildirim istatistiği</h2>
     <p>Bir duyuru bildirimi açıldığında/görüldüğünde, geliştiricinin kaç kişiye ulaştığını görebilmesi için yalnızca o duyurunun toplu sayacı bir artırılır — cihaz kimliği, IP veya kişisel bir bilgi hiç gönderilmez/saklanmaz, hangi cihazın gördüğü ayırt edilemez.</p>
@@ -108,10 +111,10 @@
     </ul>
 
     <h2>KVKK — İşleme amaçları ve hukuki sebepler</h2>
-    <p>Veriler; namaz vakti/dinî içerik sunumu, uygulamanın teknik olarak çalışır tutulması ve hataların giderilmesi, kullanıcı talebiyle iletişim, reklam gösterimi ve satın alma işlemlerinin yürütülmesi amaçlarıyla işlenir. Çökme raporlama ve uygulamanın teknik işleyişi "meşru menfaat"e, satın alma/abonelik işlemleri "sözleşmenin kurulması/ifası"na dayanır; konum paylaşımı ve iletişim formu gibi işlemler yalnızca kullanıcının kendi açık eylemiyle başlar. AB/EEA/Birleşik Krallık kullanıcılarında reklam kişiselleştirmesi öncesi ayrıca açık rıza (UMP formu) alınır; bunun dışında, işlenen verinin niteliği gereği ayrı bir açık rıza metni/ekranı bulunmamaktadır.</p>
+    <p>Veriler; namaz vakti/dinî içerik sunumu, uygulamanın teknik olarak çalışır tutulması ve hataların giderilmesi, kullanıcı talebiyle iletişim, reklam gösterimi/ölçümü ve satın alma işlemlerinin yürütülmesi amaçlarıyla işlenir. Çökme raporlama, reklam ölçümü (GA4) ve uygulamanın teknik işleyişi "meşru menfaat"e, satın alma/abonelik işlemleri "sözleşmenin kurulması/ifası"na dayanır; konum paylaşımı ve iletişim formu gibi işlemler yalnızca kullanıcının kendi açık eylemiyle başlar. AB/EEA/Birleşik Krallık kullanıcılarında reklam kişiselleştirmesi öncesi ayrıca açık rıza (UMP formu) alınır; bunun dışında, işlenen verinin niteliği gereği ayrı bir açık rıza metni/ekranı bulunmamaktadır.</p>
 
     <h2>Yurt dışına aktarım</h2>
-    <p>Google (Firebase Crashlytics/Messaging, AdMob — ABD merkezli) ve OpenStreetMap (Cami Bulucu sorguları — AB merkezli) gibi hizmet sağlayıcılar nedeniyle bazı teknik veriler yurt dışındaki sunuculara ulaşabilir. Bu sağlayıcılar kendi uluslararası veri işleme sözleşmeleri kapsamında hizmet verir; Vakitçe'nin kendi sunucusu yurt dışına kullanıcıya özel bir veri aktarmaz.</p>
+    <p>Google (Firebase Crashlytics/Messaging/Analytics, AdMob, Google Ads — ABD merkezli) ve OpenStreetMap (Cami Bulucu sorguları — AB merkezli) gibi hizmet sağlayıcılar nedeniyle bazı teknik veriler yurt dışındaki sunuculara ulaşabilir. Bu sağlayıcılar kendi uluslararası veri işleme sözleşmeleri kapsamında hizmet verir; Vakitçe'nin kendi sunucusu yurt dışına kullanıcıya özel bir veri aktarmaz.</p>
 
     <h2>İlgili kişi hakları (KVKK m.11) ve başvuru yöntemi</h2>
     <p>Kullanıcılar; verilerinin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacını öğrenme, yurt içi/dışı aktarıldığı tarafları bilme, eksik/yanlış işlenmişse düzeltilmesini isteme, kanunda öngörülen şartlarda silinmesini/yok edilmesini isteme, bu işlemlerin aktarılan taraflara bildirilmesini isteme, otomatik işleme sonucu aleyhine bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğraması hâlinde giderim talep etme haklarına sahiptir. Bu haklar kapsamındaki talepler <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a> adresine e-posta ile iletilebilir; en geç 30 gün içinde yanıtlanır.</p>
@@ -122,7 +125,7 @@
     <h2>İletişim</h2>
     <p>Sorularınız için: <a href="mailto:vakitceapp@gmail.com">vakitceapp@gmail.com</a>. Kullanım Koşulları'nı <a href="terms.html">buradan</a> okuyabilirsiniz.</p>
 
-    <p class="note">Son güncelleme: 27 Ağustos 2026.</p>
+    <p class="note">Son güncelleme: 6 Eylül 2026.</p>
   </div>
 </main>
 <footer>
